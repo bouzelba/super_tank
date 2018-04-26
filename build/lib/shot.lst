@@ -1,0 +1,116 @@
+                              1 
+                              2 ;;; gcc for m6809 : Feb 15 2016 21:40:10
+                              3 ;;; 4.3.6 (gcc6809)
+                              4 ;;; ABI version 1
+                              5 ;;; -mint8
+                              6 	.module	shot.c
+                              7 	.globl _turbo
+                              8 	.area .data
+   0000                       9 _turbo:
+   0000 00                   10 	.byte	0	;skip space
+                             11 	.globl _lives_number
+   0001                      12 _lives_number:
+   0001 03                   13 	.byte	3
+                             14 	.globl _missils_voctors
+   0002                      15 _missils_voctors:
+   0002 00                   16 	.byte	0
+   0003 1E                   17 	.byte	30
+   0004 02                   18 	.byte	2
+   0005 FF                   19 	.byte	-1
+   0006 00                   20 	.byte	0
+   0007 FC                   21 	.byte	-4
+   0008 01                   22 	.byte	1
+   0009 00                   23 	.byte	0
+   000A 00                   24 	.byte	0
+                             25 	.globl _missils_shape
+   000B                      26 _missils_shape:
+   000B 02                   27 	.byte	2
+   000C 03                   28 	.byte	3
+   000D 00 02                29 	.word	_missils_voctors
+                             30 	.globl _missils
+   000F                      31 _missils:
+   000F 00                   32 	.byte	0
+   0010 00                   33 	.byte	0
+   0011 00                   34 	.byte	0
+   0012 00                   35 	.byte	0
+   0013 00 0B                36 	.word	_missils_shape
+                             37 	.globl _shots_voctors
+   0015                      38 _shots_voctors:
+   0015 00                   39 	.byte	0
+   0016 1E                   40 	.byte	30
+   0017 02                   41 	.byte	2
+   0018 FF                   42 	.byte	-1
+   0019 00                   43 	.byte	0
+   001A FC                   44 	.byte	-4
+   001B 01                   45 	.byte	1
+   001C 00                   46 	.byte	0
+   001D 00                   47 	.byte	0
+                             48 	.globl _shots_shape
+   001E                      49 _shots_shape:
+   001E 02                   50 	.byte	2
+   001F 03                   51 	.byte	3
+   0020 00 15                52 	.word	_shots_voctors
+                             53 	.globl _shots
+   0022                      54 _shots:
+   0022 00                   55 	.byte	0
+   0023 00                   56 	.byte	0
+   0024 00                   57 	.byte	0
+   0025 00                   58 	.byte	0
+   0026 00 1E                59 	.word	_shots_shape
+                             60 	.globl _fire_objects
+                             61 	.area .text
+   0000                      62 _fire_objects:
+   0000 00 22                63 	.word	_shots
+   0002 00 0F                64 	.word	_missils
+                             65 	.globl _init_shot
+   0004                      66 _init_shot:
+   0004 BE 00 00      [ 6]   67 	ldx	_fire_objects
+   0007 6F 01         [ 7]   68 	clr	1,x
+   0009 BE 00 00      [ 6]   69 	ldx	_fire_objects
+   000C 6F 84         [ 6]   70 	clr	,x
+   000E BE 00 00      [ 6]   71 	ldx	_fire_objects
+   0011 6F 03         [ 7]   72 	clr	3,x
+   0013 39            [ 5]   73 	rts
+                             74 	.globl _init_missils
+   0014                      75 _init_missils:
+   0014 BE 00 02      [ 6]   76 	ldx	_fire_objects+2
+   0017 6F 01         [ 7]   77 	clr	1,x
+   0019 BE 00 02      [ 6]   78 	ldx	_fire_objects+2
+   001C 6F 84         [ 6]   79 	clr	,x
+   001E BE 00 02      [ 6]   80 	ldx	_fire_objects+2
+   0021 6F 03         [ 7]   81 	clr	3,x
+   0023 39            [ 5]   82 	rts
+                             83 	.globl _fire_shots
+   0024                      84 _fire_shots:
+   0024 39            [ 5]   85 	rts
+                             86 	.area .bss
+                             87 	.globl	_score
+   0000                      88 _score:	.blkb	1
+ASxxxx Assembler V05.00  (Motorola 6809), page 1.
+Hexidecimal [16-Bits]
+
+Symbol Table
+
+    .__.$$$.       =   2710 L   |     .__.ABS.       =   0000 G
+    .__.CPU.       =   0000 L   |     .__.H$L.       =   0001 L
+  3 _fire_objects      0000 GR  |   3 _fire_shots        0024 GR
+  3 _init_missils      0014 GR  |   3 _init_shot         0004 GR
+  2 _lives_number      0001 GR  |   2 _missils           000F GR
+  2 _missils_shape     000B GR  |   2 _missils_vocto     0002 GR
+  4 _score             0000 GR  |   2 _shots             0022 GR
+  2 _shots_shape       001E GR  |   2 _shots_voctors     0015 GR
+  2 _turbo             0000 GR
+
+ASxxxx Assembler V05.00  (Motorola 6809), page 2.
+Hexidecimal [16-Bits]
+
+Area Table
+
+[_CSEG]
+   0 _CODE            size    0   flags C080
+   2 .data            size   28   flags  100
+   3 .text            size   25   flags  100
+   4 .bss             size    1   flags    0
+[_DSEG]
+   1 _DATA            size    0   flags C0C0
+

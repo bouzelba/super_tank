@@ -1,0 +1,57 @@
+                              1 
+                              2 ;;; gcc for m6809 : Feb 15 2016 21:40:10
+                              3 ;;; 4.3.6 (gcc6809)
+                              4 ;;; ABI version 1
+                              5 ;;; -mint8
+                              6 	.module	cartridge.c
+                              7 	.globl _game_header
+                              8 	.area	.cartridge
+   0000                       9 _game_header:
+   0000 67                   10 	.byte	0x67
+   0001 20                   11 	.byte	0x20
+   0002 47                   12 	.byte	0x47
+   0003 43                   13 	.byte	0x43
+   0004 45                   14 	.byte	0x45
+   0005 20                   15 	.byte	0x20
+   0006 32                   16 	.byte	0x32
+   0007 30                   17 	.byte	0x30
+   0008 31                   18 	.byte	0x31
+   0009 38                   19 	.byte	0x38
+   000A 80                   20 	.byte	0x80
+   000B FD 0D                21 	.word	_Vec_Music_1
+   000D F8                   22 	.byte	-8
+   000E 50                   23 	.byte	80
+   000F 10                   24 	.byte	16
+   0010 A6                   25 	.byte	-90
+   0011 53                   26 	.byte	0x53
+   0012 55                   27 	.byte	0x55
+   0013 50                   28 	.byte	0x50
+   0014 45                   29 	.byte	0x45
+   0015 52                   30 	.byte	0x52
+   0016 20                   31 	.byte	0x20
+   0017 54                   32 	.byte	0x54
+   0018 41                   33 	.byte	0x41
+   0019 4E                   34 	.byte	0x4E
+   001A 4B                   35 	.byte	0x4B
+   001B 80                   36 	.byte	0x80
+   001C 00                   37 	.byte	0x00
+ASxxxx Assembler V05.00  (Motorola 6809), page 1.
+Hexidecimal [16-Bits]
+
+Symbol Table
+
+    .__.$$$.       =   2710 L   |     .__.ABS.       =   0000 G
+    .__.CPU.       =   0000 L   |     .__.H$L.       =   0001 L
+    _Vec_Music_1       **** GX  |   2 _game_header       0000 GR
+
+ASxxxx Assembler V05.00  (Motorola 6809), page 2.
+Hexidecimal [16-Bits]
+
+Area Table
+
+[_CSEG]
+   0 _CODE            size    0   flags C080
+   2 .cartridge       size   1D   flags  100
+[_DSEG]
+   1 _DATA            size    0   flags C0C0
+

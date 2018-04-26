@@ -1,0 +1,90 @@
+[editor]
+line_wrapping=false
+line_break_column=72
+auto_continue_multiline=true
+
+[file_prefs]
+final_new_line=true
+ensure_convert_new_lines=false
+strip_trailing_spaces=false
+replace_tabs=false
+
+[indentation]
+indent_width=4
+indent_type=1
+indent_hard_tab_width=8
+detect_indent=false
+detect_indent_width=false
+indent_mode=2
+
+[project]
+name=The Count
+base_path=.\\
+description=
+file_patterns=*.c;*.h;
+
+[long line marker]
+long_line_behaviour=1
+long_line_column=72
+
+[files]
+current_page=4
+FILE_NAME_0=1473;C;0;EUTF-8;1;1;0;E%3A%5CVectrex%5CUmgebung%5CProjects%5Csuper_tank%5Csource%5Cgame.c;0;4
+FILE_NAME_1=0;C++;0;EUTF-8;1;1;0;E%3A%5CVectrex%5CUmgebung%5CProjects%5Csuper_tank%5Csource%5Cgame.h;0;4
+FILE_NAME_2=109;C;0;EUTF-8;1;1;0;E%3A%5CVectrex%5CUmgebung%5CProjects%5Csuper_tank%5Csource%5Cenemies.c;0;4
+FILE_NAME_3=24;C++;0;EUTF-8;1;1;0;E%3A%5CVectrex%5CUmgebung%5CProjects%5Csuper_tank%5Csource%5Cenemies.h;0;4
+FILE_NAME_4=2575;C;0;EUTF-8;1;1;0;E%3A%5CVectrex%5CUmgebung%5CProjects%5Csuper_tank%5Csource%5Cplayer.c;0;4
+FILE_NAME_5=18;C++;0;EUTF-8;1;1;0;E%3A%5CVectrex%5CUmgebung%5CProjects%5Csuper_tank%5Csource%5Cfield.h;0;4
+FILE_NAME_6=298;C;0;EUTF-8;1;1;0;E%3A%5CVectrex%5CUmgebung%5CProjects%5Csuper_tank%5Csource%5Cfield.c;0;4
+FILE_NAME_7=0;C++;0;EUTF-8;1;1;0;E%3A%5CVectrex%5CUmgebung%5CProjects%5Csuper_tank%5Csource%5Cutils%5Ccontroller.h;0;4
+FILE_NAME_8=0;C;0;EUTF-8;1;1;0;E%3A%5CVectrex%5CUmgebung%5CProjects%5Csuper_tank%5Csource%5Cutils%5Cprint.c;0;4
+FILE_NAME_9=0;C++;0;EUTF-8;1;1;0;E%3A%5CVectrex%5CUmgebung%5CProjects%5Csuper_tank%5Csource%5Cutils%5Cprint.h;0;4
+FILE_NAME_10=768;C;0;EUTF-8;1;1;0;E%3A%5CVectrex%5CUmgebung%5CProjects%5Csuper_tank%5Csource%5Cutils%5Csprites.c;0;4
+FILE_NAME_11=709;C++;0;EUTF-8;1;1;0;E%3A%5CVectrex%5CUmgebung%5CProjects%5Csuper_tank%5Csource%5Cutils%5Csprites.h;0;4
+FILE_NAME_12=755;C++;0;EUTF-8;1;1;0;E%3A%5CVectrex%5CUmgebung%5CProjects%5Csuper_tank%5Csource%5Cutils%5Cvector.h;0;4
+FILE_NAME_13=392;C++;0;EUTF-8;1;1;0;E%3A%5CVectrex%5CUmgebung%5CProjects%5Csuper_tank%5Csource%5Cutils%5Cutils.h;0;4
+FILE_NAME_14=1156;C;0;EUTF-8;1;1;0;E%3A%5CVectrex%5CUmgebung%5CProjects%5Csuper_tank%5Csource%5Ccartridge.c;0;4
+FILE_NAME_15=718;C;0;EUTF-8;1;1;0;E%3A%5CVectrex%5CUmgebung%5CProjects%5Csuper_tank%5Csource%5Cmain.c;0;4
+FILE_NAME_16=142;C;0;EUTF-8;1;1;0;E%3A%5CVectrex%5CUmgebung%5CProjects%5Csuper_tank%5Csource%5Cutils%5Coptions.c;0;4
+FILE_NAME_17=210;C++;0;EUTF-8;1;1;0;E%3A%5CVectrex%5CUmgebung%5CProjects%5Csuper_tank%5Csource%5Cutils%5Coptions.h;0;4
+FILE_NAME_18=84;C++;0;EUTF-8;1;1;0;E%3A%5CVectrex%5CUmgebung%5CProjects%5Csuper_tank%5Csource%5Cplayer.h;0;4
+FILE_NAME_19=1345;C;0;EUTF-8;1;1;0;E%3A%5CVectrex%5CUmgebung%5CProjects%5Csuper_tank%5Csource%5Cshot.c;0;4
+
+[build-menu]
+NF_00_LB=_Make
+NF_00_CM="%p\\make.bat"
+NF_00_WD=%p
+NF_01_LB=Make (eigenes _Target)...
+NF_01_CM="%p\\make.bat"
+NF_01_WD=%p
+NF_02_LB=Make _Objekt-Datei
+NF_02_CM=make %e.o
+NF_02_WD=
+EX_00_LB=_Execute
+EX_00_CM="%p\\make.bat" run
+EX_00_WD=%p
+CFT_00_LB=_Compile
+CFT_00_CM="%p\\make_opt.bat" build
+CFT_00_WD=%p
+CFT_01_LB=_Build
+CFT_01_CM="%p\\make.bat" build
+CFT_01_WD=%p
+CFT_02_LB=_Lint
+CFT_02_CM="%p\\make.bat" lint
+CFT_02_WD=%p
+filetypes=C;C++;
+NF_03_LB=File Lint
+NF_03_CM=C:\\Programme\\Cppcheck\\cppcheck --language=c --enable=all --template=gcc "%f"
+NF_03_WD=
+C++FT_00_LB=_Compile
+C++FT_00_CM="%p\\make.bat" compile
+C++FT_00_WD=%p
+C++FT_01_LB=_Build
+C++FT_01_CM="%p\\make.bat" build
+C++FT_01_WD=%p
+C++FT_02_LB=_Lint
+C++FT_02_CM="%p\\make.bat" lint
+C++FT_02_WD=%p
+EX_01_LB=_Clean
+EX_01_CM="%p\\make.bat" clean
+EX_01_WD=%p

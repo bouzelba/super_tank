@@ -1,0 +1,175 @@
+                              1 
+                              2 ;;; gcc for m6809 : Feb 15 2016 21:40:10
+                              3 ;;; 4.3.6 (gcc6809)
+                              4 ;;; ABI version 1
+                              5 ;;; -mint8
+                              6 	.module	enemies.c
+                              7 	.globl _enemie0_vectors
+                              8 	.area .data
+   0000                       9 _enemie0_vectors:
+   0000 00                   10 	.byte	0
+   0001 1E                   11 	.byte	30
+   0002 02                   12 	.byte	2
+   0003 FF                   13 	.byte	-1
+   0004 00                   14 	.byte	0
+   0005 FC                   15 	.byte	-4
+   0006 FF                   16 	.byte	-1
+   0007 E2                   17 	.byte	-30
+   0008 00                   18 	.byte	0
+   0009 FF                   19 	.byte	-1
+   000A 00                   20 	.byte	0
+   000B F8                   21 	.byte	-8
+   000C FF                   22 	.byte	-1
+   000D 0A                   23 	.byte	10
+   000E 00                   24 	.byte	0
+   000F FF                   25 	.byte	-1
+   0010 05                   26 	.byte	5
+   0011 FE                   27 	.byte	-2
+   0012 FF                   28 	.byte	-1
+   0013 00                   29 	.byte	0
+   0014 FB                   30 	.byte	-5
+   0015 FF                   31 	.byte	-1
+   0016 FB                   32 	.byte	-5
+   0017 FD                   33 	.byte	-3
+   0018 FF                   34 	.byte	-1
+   0019 D8                   35 	.byte	-40
+   001A 00                   36 	.byte	0
+   001B FF                   37 	.byte	-1
+   001C F6                   38 	.byte	-10
+   001D 03                   39 	.byte	3
+   001E FF                   40 	.byte	-1
+   001F 00                   41 	.byte	0
+   0020 22                   42 	.byte	34
+   0021 FF                   43 	.byte	-1
+   0022 0A                   44 	.byte	10
+   0023 03                   45 	.byte	3
+   0024 FF                   46 	.byte	-1
+   0025 28                   47 	.byte	40
+   0026 00                   48 	.byte	0
+   0027 FF                   49 	.byte	-1
+   0028 05                   50 	.byte	5
+   0029 FD                   51 	.byte	-3
+   002A FF                   52 	.byte	-1
+   002B 00                   53 	.byte	0
+   002C FB                   54 	.byte	-5
+   002D FF                   55 	.byte	-1
+   002E FB                   56 	.byte	-5
+   002F FE                   57 	.byte	-2
+   0030 FF                   58 	.byte	-1
+   0031 F6                   59 	.byte	-10
+   0032 00                   60 	.byte	0
+   0033 FF                   61 	.byte	-1
+   0034 00                   62 	.byte	0
+   0035 F8                   63 	.byte	-8
+   0036 FF                   64 	.byte	-1
+   0037 1E                   65 	.byte	30
+   0038 00                   66 	.byte	0
+   0039 01                   67 	.byte	1
+   003A 00                   68 	.byte	0
+   003B 00                   69 	.byte	0
+                             70 	.globl _enemie0_shape
+   003C                      71 _enemie0_shape:
+   003C 00                   72 	.byte	0
+   003D 14                   73 	.byte	20
+   003E 00 00                74 	.word	_enemie0_vectors
+                             75 	.globl _enemie0
+   0040                      76 _enemie0:
+   0040 00                   77 	.byte	0
+   0041 00                   78 	.byte	0
+   0042 20                   79 	.byte	32
+   0043 1E                   80 	.byte	30
+   0044 00 3C                81 	.word	_enemie0_shape
+                             82 	.globl _enemie1_vectors
+   0046                      83 _enemie1_vectors:
+   0046 00 00                84 	.word	0	;skip space 8
+   0048 00 00                85 	.word	0	;skip space 6
+   004A 00 00                86 	.word	0	;skip space 4
+   004C 00 00                87 	.word	0	;skip space 2
+                             88 	.globl _enemie1_shape
+   004E                      89 _enemie1_shape:
+   004E 01                   90 	.byte	1
+   004F 09                   91 	.byte	9
+   0050 00 46                92 	.word	_enemie1_vectors
+                             93 	.globl _enemie1
+   0052                      94 _enemie1:
+   0052 00                   95 	.byte	0
+   0053 00                   96 	.byte	0
+   0054 00                   97 	.byte	0
+   0055 23                   98 	.byte	35
+   0056 00 4E                99 	.word	_enemie1_shape
+                            100 	.globl _enemie2_vectors
+   0058                     101 _enemie2_vectors:
+   0058 00 00               102 	.word	0	;skip space 8
+   005A 00 00               103 	.word	0	;skip space 6
+   005C 00 00               104 	.word	0	;skip space 4
+   005E 00 00               105 	.word	0	;skip space 2
+                            106 	.globl _enemie2_shape
+   0060                     107 _enemie2_shape:
+   0060 01                  108 	.byte	1
+   0061 09                  109 	.byte	9
+   0062 00 58               110 	.word	_enemie2_vectors
+                            111 	.globl _enemie2
+   0064                     112 _enemie2:
+   0064 00                  113 	.byte	0
+   0065 00                  114 	.byte	0
+   0066 00                  115 	.byte	0
+   0067 4B                  116 	.byte	75
+   0068 00 60               117 	.word	_enemie2_shape
+                            118 	.globl _enemies
+   006A                     119 _enemies:
+   006A 00 40               120 	.word	_enemie0
+   006C 00 52               121 	.word	_enemie1
+   006E 00 64               122 	.word	_enemie2
+                            123 	.area .text
+                            124 	.globl _init_enemies
+   0000                     125 _init_enemies:
+   0000 34 20         [ 6]  126 	pshs	y
+   0002 10 BE 00 6A   [ 7]  127 	ldy	_enemies
+   0006 BD 00 00      [ 8]  128 	jsr	__Random
+   0009 E7 21         [ 5]  129 	stb	1,y
+   000B 10 BE 00 6A   [ 7]  130 	ldy	_enemies
+   000F BD 00 00      [ 8]  131 	jsr	__Random
+   0012 E7 A4         [ 4]  132 	stb	,y
+   0014 35 A0         [ 7]  133 	puls	y,pc
+                            134 	.globl _move_enemies
+   0016                     135 _move_enemies:
+   0016 34 20         [ 6]  136 	pshs	y
+   0018 10 BE 00 6A   [ 7]  137 	ldy	_enemies
+   001C BE 00 6A      [ 6]  138 	ldx	_enemies
+   001F E6 01         [ 5]  139 	ldb	1,x
+   0021 CB 02         [ 2]  140 	addb	#2
+   0023 E7 21         [ 5]  141 	stb	1,y
+   0025 35 A0         [ 7]  142 	puls	y,pc
+                            143 	.globl _draw_enemies
+   0027                     144 _draw_enemies:
+   0027 BE 00 6A      [ 6]  145 	ldx	_enemies
+   002A BD 00 00      [ 8]  146 	jsr	_draw_sprite
+   002D 39            [ 5]  147 	rts
+ASxxxx Assembler V05.00  (Motorola 6809), page 1.
+Hexidecimal [16-Bits]
+
+Symbol Table
+
+    .__.$$$.       =   2710 L   |     .__.ABS.       =   0000 G
+    .__.CPU.       =   0000 L   |     .__.H$L.       =   0001 L
+    __Random           **** GX  |   3 _draw_enemies      0027 GR
+    _draw_sprite       **** GX  |   2 _enemie0           0040 GR
+  2 _enemie0_shape     003C GR  |   2 _enemie0_vecto     0000 GR
+  2 _enemie1           0052 GR  |   2 _enemie1_shape     004E GR
+  2 _enemie1_vecto     0046 GR  |   2 _enemie2           0064 GR
+  2 _enemie2_shape     0060 GR  |   2 _enemie2_vecto     0058 GR
+  2 _enemies           006A GR  |   3 _init_enemies      0000 GR
+  3 _move_enemies      0016 GR
+
+ASxxxx Assembler V05.00  (Motorola 6809), page 2.
+Hexidecimal [16-Bits]
+
+Area Table
+
+[_CSEG]
+   0 _CODE            size    0   flags C080
+   2 .data            size   70   flags  100
+   3 .text            size   2E   flags  100
+[_DSEG]
+   1 _DATA            size    0   flags C0C0
+

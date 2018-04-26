@@ -1,0 +1,79 @@
+XH2
+H 5 areas E global symbols 2 banks 1 modes
+M shot.c
+G 00 00 80 81 82 83 84 85 86 87 88 89 8A 8B 8C 8D 8E 8F
+B _CSEG base 0 size 0 map 0 flags 0
+B _DSEG base 0 size 0 map 0 flags 4 fsfx _DS
+S .__.ABS. Def0000
+A _CODE size 0 flags CC80 bank 0
+A _DATA size 0 flags CCC0 bank 1
+A .data size 28 flags D00
+S _shots_shape Def001E
+S _turbo Def0000
+S _shots Def0022
+S _missils_voctors Def0002
+S _missils_shape Def000B
+S _missils Def000F
+S _lives_number Def0001
+S _shots_voctors Def0015
+A .text size 25 flags D00
+S _fire_objects Def0000
+S _fire_shots Def0024
+S _init_shot Def0004
+S _init_missils Def0014
+A .bss size 1 flags C00
+S _score Def0000
+T 00 00
+R 00 00 00 02
+T 00 00 00
+R 00 00 00 02
+T 00 01
+R 00 00 00 02
+T 00 01 03
+R 00 00 00 02
+T 00 02
+R 00 00 00 02
+T 00 02 00 1E 02 FF 00 FC 01 00 00
+R 00 00 00 02
+T 00 0B
+R 00 00 00 02
+T 00 0B 02 03 00 02
+R 00 00 00 02 01 04 00 02
+T 00 0F
+R 00 00 00 02
+T 00 0F 00 00 00 00 00 0B
+R 00 00 00 02 01 06 00 02
+T 00 15
+R 00 00 00 02
+T 00 15 00 1E 02 FF 00 FC 01 00 00
+R 00 00 00 02
+T 00 1E
+R 00 00 00 02
+T 00 1E 02 03 00 15
+R 00 00 00 02 01 04 00 02
+T 00 22
+R 00 00 00 02
+T 00 22 00 00 00 00 00 1E
+R 00 00 00 02 01 06 00 02
+T 00 00
+R 00 00 00 03
+T 00 00 00 22 00 0F
+R 00 00 00 03 01 02 00 02 01 04 00 02
+T 00 04
+R 00 00 00 03
+T 00 04 BE 00 00 6F 01 BE 00 00 6F 84 BE
+R 00 00 00 03 01 03 00 03 01 08 00 03
+T 00 0F 00 00 6F 03 39
+R 00 00 00 03 01 02 00 03
+T 00 14
+R 00 00 00 03
+T 00 14 BE 00 02 6F 01 BE 00 02 6F 84 BE
+R 00 00 00 03 01 03 00 03 01 08 00 03
+T 00 1F 00 02 6F 03 39
+R 00 00 00 03 01 02 00 03
+T 00 24
+R 00 00 00 03
+T 00 24 39
+R 00 00 00 03
+T 00 00
+R 00 00 00 04

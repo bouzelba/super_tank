@@ -1,0 +1,137 @@
+                              1 
+                              2 ;;; gcc for m6809 : Feb 15 2016 21:40:10
+                              3 ;;; 4.3.6 (gcc6809)
+                              4 ;;; ABI version 1
+                              5 ;;; -mint8
+                              6 	.module	game.c
+                              7 	.area .text
+   0000                       8 LC0:
+   0000 47 45 54 20 52 45     9 	.ascii "GET READY\0"
+        41 44 59 00
+                             10 	.globl _game_init
+   000A                      11 _game_init:
+   000A 32 7F         [ 5]   12 	leas	-1,s
+   000C BD 00 4C      [ 8]   13 	jsr	_enable_controller_1_x
+   000F BD 00 46      [ 8]   14 	jsr	_enable_controller_1_y
+   0012 BD 00 42      [ 8]   15 	jsr	_disable_controller_2_x
+   0015 BD 00 3E      [ 8]   16 	jsr	_disable_controller_2_y
+   0018 BD 00 00      [ 8]   17 	jsr	_init_player
+   001B BD 00 00      [ 8]   18 	jsr	_init_enemies
+   001E C6 4B         [ 2]   19 	ldb	#75
+   0020 E7 E4         [ 4]   20 	stb	,s
+   0022 20 13         [ 3]   21 	bra	L2
+   0024                      22 L3:
+   0024 BD 00 00      [ 8]   23 	jsr	___Wait_Recal
+   0027 BD 00 00      [ 8]   24 	jsr	___Reset0Ref
+   002A C6 C4         [ 2]   25 	ldb	#-60
+   002C E7 E2         [ 6]   26 	stb	,-s
+   002E 8E 00 00      [ 3]   27 	ldx	#LC0
+   0031 5F            [ 2]   28 	clrb
+   0032 BD 00 00      [ 8]   29 	jsr	_print_str
+   0035 32 61         [ 5]   30 	leas	1,s
+   0037                      31 L2:
+   0037 6A E4         [ 6]   32 	dec	,s
+                             33 	; tst	,s	; optimization 1
+   0039 26 E9         [ 3]   34 	bne	L3
+   003B 32 61         [ 5]   35 	leas	1,s
+   003D 39            [ 5]   36 	rts
+   003E                      37 _disable_controller_2_y:
+   003E 7F 00 00      [ 7]   38 	clr	_Vec_Joy_Mux_2_Y
+   0041 39            [ 5]   39 	rts
+   0042                      40 _disable_controller_2_x:
+   0042 7F 00 00      [ 7]   41 	clr	_Vec_Joy_Mux_2_X
+   0045 39            [ 5]   42 	rts
+   0046                      43 _enable_controller_1_y:
+   0046 C6 03         [ 2]   44 	ldb	#3
+   0048 F7 00 00      [ 5]   45 	stb	_Vec_Joy_Mux_1_Y
+   004B 39            [ 5]   46 	rts
+   004C                      47 _enable_controller_1_x:
+   004C C6 01         [ 2]   48 	ldb	#1
+   004E F7 00 00      [ 5]   49 	stb	_Vec_Joy_Mux_1_X
+   0051 39            [ 5]   50 	rts
+                             51 	.globl _game_loop
+   0052                      52 _game_loop:
+   0052 32 7F         [ 5]   53 	leas	-1,s
+   0054 C6 01         [ 2]   54 	ldb	#1
+   0056 E7 E4         [ 4]   55 	stb	,s
+   0058 20 17         [ 3]   56 	bra	L14
+   005A                      57 L15:
+   005A BD 00 00      [ 8]   58 	jsr	___Wait_Recal
+   005D BD 00 00      [ 8]   59 	jsr	_move_player
+   0060 BD 00 00      [ 8]   60 	jsr	_move_enemies
+   0063 BD 00 00      [ 8]   61 	jsr	_draw_field
+   0066 BD 00 00      [ 8]   62 	jsr	_draw_player
+   0069 BD 00 00      [ 8]   63 	jsr	_draw_enemies
+   006C BD 00 00      [ 8]   64 	jsr	_check_player
+   006F E7 E4         [ 4]   65 	stb	,s
+   0071                      66 L14:
+   0071 6D E4         [ 6]   67 	tst	,s
+   0073 26 E5         [ 3]   68 	bne	L15
+   0075 32 61         [ 5]   69 	leas	1,s
+   0077 39            [ 5]   70 	rts
+   0078                      71 LC1:
+   0078 47 41 4D 45 20 4F    72 	.ascii "GAME OVER\0"
+        56 45 52 00
+                             73 	.globl _game_over
+   0082                      74 _game_over:
+   0082 32 7F         [ 5]   75 	leas	-1,s
+   0084 C6 96         [ 2]   76 	ldb	#-106
+   0086 E7 E4         [ 4]   77 	stb	,s
+   0088 20 13         [ 3]   78 	bra	L18
+   008A                      79 L19:
+   008A BD 00 00      [ 8]   80 	jsr	___Wait_Recal
+   008D BD 00 00      [ 8]   81 	jsr	___Reset0Ref
+   0090 C6 BA         [ 2]   82 	ldb	#-70
+   0092 E7 E2         [ 6]   83 	stb	,-s
+   0094 8E 00 78      [ 3]   84 	ldx	#LC1
+   0097 5F            [ 2]   85 	clrb
+   0098 BD 00 00      [ 8]   86 	jsr	_print_str
+   009B 32 61         [ 5]   87 	leas	1,s
+   009D                      88 L18:
+   009D 6A E4         [ 6]   89 	dec	,s
+                             90 	; tst	,s	; optimization 1
+   009F 26 E9         [ 3]   91 	bne	L19
+   00A1 32 61         [ 5]   92 	leas	1,s
+   00A3 39            [ 5]   93 	rts
+                             94 	.globl _game
+   00A4                      95 _game:
+   00A4 BD 00 0A      [ 8]   96 	jsr	_game_init
+   00A7 BD 00 52      [ 8]   97 	jsr	_game_loop
+   00AA BD 00 82      [ 8]   98 	jsr	_game_over
+   00AD C6 FF         [ 2]   99 	ldb	#-1
+   00AF 39            [ 5]  100 	rts
+ASxxxx Assembler V05.00  (Motorola 6809), page 1.
+Hexidecimal [16-Bits]
+
+Symbol Table
+
+    .__.$$$.       =   2710 L   |     .__.ABS.       =   0000 G
+    .__.CPU.       =   0000 L   |     .__.H$L.       =   0001 L
+  2 L14                0071 R   |   2 L15                005A R
+  2 L18                009D R   |   2 L19                008A R
+  2 L2                 0037 R   |   2 L3                 0024 R
+  2 LC0                0000 R   |   2 LC1                0078 R
+    _Vec_Joy_Mux_1     **** GX  |     _Vec_Joy_Mux_1     **** GX
+    _Vec_Joy_Mux_2     **** GX  |     _Vec_Joy_Mux_2     **** GX
+    ___Reset0Ref       **** GX  |     ___Wait_Recal      **** GX
+    _check_player      **** GX  |   2 _disable_contr     0042 R
+  2 _disable_contr     003E R   |     _draw_enemies      **** GX
+    _draw_field        **** GX  |     _draw_player       **** GX
+  2 _enable_contro     004C R   |   2 _enable_contro     0046 R
+  2 _game              00A4 GR  |   2 _game_init         000A GR
+  2 _game_loop         0052 GR  |   2 _game_over         0082 GR
+    _init_enemies      **** GX  |     _init_player       **** GX
+    _move_enemies      **** GX  |     _move_player       **** GX
+    _print_str         **** GX
+
+ASxxxx Assembler V05.00  (Motorola 6809), page 2.
+Hexidecimal [16-Bits]
+
+Area Table
+
+[_CSEG]
+   0 _CODE            size    0   flags C080
+   2 .text            size   B0   flags  100
+[_DSEG]
+   1 _DATA            size    0   flags C0C0
+
